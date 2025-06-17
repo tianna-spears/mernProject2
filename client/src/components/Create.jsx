@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const Create = () => {
@@ -12,7 +11,7 @@ const Create = () => {
 
   return (
     <div className="create_form">
-      <input type="text" placeholder="Type Todo Here" onChange={() => setTask(e.target.value)}/>
+      <input type="text" placeholder="Type Todo Here" onChange={(e) => setTask(e.target.value)}/>
       <button type="button" onClick={handleAdd}>Add </button>
     </div>
   );
