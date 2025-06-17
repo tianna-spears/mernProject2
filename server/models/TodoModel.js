@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 const TodoSchema = new mongoose.Schema({
-  task: String,
+  task: {
+    type: String,
+    required: true
+  }
 });
 
 const TodoModel = mongoose.model("todos", TodoSchema);
