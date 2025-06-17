@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Create = () => {
-  const [task, setTask] = useState();
+const Create = ({ onAdd }) => {
+  const [task, setTask] = useState('');
+
   const handleAdd = () => {
-    axios.post('http://localhost:5000/add', {task: task})
-    .then(result => console.log(result))
-    .catch(err => console.log(err))
-  }
+    axios.post('http://localhost:5000/add', {task})
+ .then((result) => {
+      onAdd(result.data);
+      setTask(''); 
+    })
+    .catch(err => console.log(err));
+};
 
   return (
     <div className="create_form">
